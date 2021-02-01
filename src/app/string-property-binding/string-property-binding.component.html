@@ -1,0 +1,64 @@
+<div class="p-4 text-center">
+  <div class="container mb-4">
+    <h5 class="mb-3">This session is about "{{ sessionName }}"</h5>
+    <div class="row no-gutters">
+      <div class="col-md-6">
+        <p>This is column {{ colNumOne }}</p>
+      </div>
+      <div class="col-md-6">
+        <p>This is column {{ colNumTwo }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mb-4">
+    <h5 class="mb-3">This part is about "{{ propertyTitle }}"</h5>
+    <div class="row no-gutters align-items-center">
+      <div class="col-md-6">
+        <p>This is for enabling and disabling button.</p>
+      </div>
+      <div class="col-md-6">
+        <button type="button" class="btn btn-success" [disabled]="!addNewServer">Add New Server</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mb-4">
+    <h5 class="mb-3">This part is about "{{ eventBinding }}" and adding event onClick</h5>
+    <div class="row no-gutters align-items-center">
+      <div class="col-md-6">
+        <!-- <p [innerHTML]="addNewServer"></p> -->
+        <p>{{ noServerCreated }}</p>
+      </div>
+      <div class="col-md-6">
+        <button type="button" class="btn btn-success" [disabled]="!addNewServer" (click)="createServer()">Add New Server</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mb-4">
+    <h5 class="mb-3">This part is about "{{ passingData }}"</h5>
+    <div class="row no-gutters align-items-center">
+      <div class="col-md-6 text-left">
+        <label>Server Name</label>
+        <input type="text" name="text" class="form-control" (input)="onUpdateServerName($event)">
+      </div>
+      <div class="col-md-6">
+        <p>{{ enterServerName }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h5 class="mb-3">This part is about "{{ twoWayBinding }}"</h5>
+    <div class="row no-gutters align-items-center">
+      <div class="col-md-6 text-left">
+        <input type="text" name="text" class="form-control" [(ngModel)]="enterServerName">
+      </div>
+      <div class="col-md-6">
+        <p>{{ enterServerName }}</p>
+      </div>
+    </div>
+  </div>
+
+</div>
