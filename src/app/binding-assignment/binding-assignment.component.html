@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="my-4">
+    <label>Username:</label>
+    <input type="text" class="form-control mb-3" [(ngModel)]="username">
+    <p class="mb-2">{{ username }}</p>
+
+    <button class="btn btn-danger" [disabled]="username === ''" (click)="username = ''">Reset user</button> 
+  </div>
+</div>
