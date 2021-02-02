@@ -1,0 +1,20 @@
+<div class="container mb-4">
+  <div class="section-wrapper my-4">
+    <input type="text" class="form-control mb-3" [(ngModel)]="serverData">
+    <p *ngIf="serverCreated" class="mb-3">Server Created Value or Data = {{ serverData }}</p>
+    <button type="button" class="btn btn-danger" (click)="onClickTrue()">Click Here</button>
+  </div>
+</div>
+
+<div class="container mb-4">
+  <div class="my-4">
+    <p [ngStyle]="{backgroundColor: getColor()}">Server no {{ serverId }} is {{ serverStatus }}</p>
+    <p>Server no {{ serverId }} is {{ serverStatus }}</p>
+  </div>
+</div>
+
+<div class="container mb-4">
+  <div class="my-3">
+    <p [ngStyle]="{backgroundColor: getStatusColor()}" [ngClass]="{offline: serverStatus === 'offline'}">Server no {{ serverId }} is {{ serverStatus }}</p>
+  </div>
+</div>
