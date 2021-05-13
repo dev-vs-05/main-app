@@ -1,0 +1,8 @@
+.bg-color {
+  background-color: bisque;
+  padding: 0.3rem;
+}
+
+.input-wrapper input {
+  max-width: 16rem;
+}

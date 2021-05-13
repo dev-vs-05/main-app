@@ -7,6 +7,7 @@ import { StringPropertyBindingComponent } from './string-property-binding/string
 import { AddServerOnclickComponent } from './add-server-onclick/add-server-onclick.component';
 import { BindingAssignmentComponent } from './binding-assignment/binding-assignment.component';
 import { AngularConditionsComponent } from './angular-conditions/angular-conditions.component';
+import { BasicComponentCreationComponent } from './angular-basics/basic-component-creation/basic-component-creation.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { AngularConditionsComponent } from './angular-conditions/angular-conditi
     AddServerOnclickComponent,
     BindingAssignmentComponent,
     AngularConditionsComponent,
+    BasicComponentCreationComponent,
   ],
   imports: [
     BrowserModule,

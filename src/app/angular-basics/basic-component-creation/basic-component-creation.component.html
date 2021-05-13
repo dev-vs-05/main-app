@@ -1,0 +1,77 @@
+<div class="p-4" *ngIf="false">
+  <!-- string interpolation -->
+  <div class="mb-3">
+    <h6 class="bg-color">String Interpolation</h6>
+    <h6> This is lecture of {{ classTopic }} </h6>
+    <p> Server with {{ serverId }} is {{ getServerStatus() }} </p>
+  </div>
+
+  <div class="mb-3">
+    <h6 class="bg-color">Diff btwn String Interpolation and Property Binding</h6>
+    <!-- property binding -->
+    <button class="btn btn-primary mb-3" [disabled]="!allowNewServer">Demo button of Property Binding</button>
+    <!-- string interpolation used for button status -->
+    <p>String interpolation way to get button status ------- {{ allowNewServer }}</p>
+
+    <!-- property binding for button status -->
+    Property Binding way to get button status ------- <span [innerText]="allowNewServer"></span>
+  </div>
+
+  <!-- event binding -->
+  <h6 class="bg-color">Event Binding with data change on click</h6>
+  <button class="btn btn-primary mb-3" (click)="onCreateServer()">Event Binding Add Server Button</button>
+  <p class="mb-3">{{ serverCreationStatus }}</p>
+
+  <!-- event binding with runtime data change -->
+  <h6 class="bg-color">Event Binding with runtime data change</h6>
+  <div class="input-wrapper mb-2">
+    <p>Enter server ID:</p>
+    <input type="number" class="form-control" maxlength="3" (input)="onUpdateServerId($event)">
+  </div>
+
+  <div class="input-wrapper mb-2">
+    <p>Enter server name:</p>
+    <input type="text" class="form-control" (input)="onUpdateServerName($event)">
+  </div>
+
+  <p>{{ updateServerId }}</p>
+  <p>{{ serverName }}</p>
+
+  <div class="input-wrapper my-3">
+    <h6 class="bg-color">Two-Way Data Binding</h6>
+    <input type="text" class="form-control mb-2" [(ngModel)]="newServerName">
+    <p>{{ newServerName }}</p>
+  </div>
+</div>
+
+<div class="p-4" *ngIf="false">
+  <!-- Assignment -->
+  <h6 class="bg-color mb-4">Assignment</h6>
+
+  <div class="mb-3 input-wrapper">
+    <input type="text" class="form-control mb-2" name="username" [(ngModel)]="userName">
+    <p class="mb-3">{{ userName }}</p>
+    <button class="btn btn-primary" [disabled]="userName === ''" (click)="userName = ''">Reset User</button>
+  </div>
+</div>
+
+<div class="p-4" *ngIf=false>
+  <!-- Directive -->
+  <h6 class="bg-color mb-4">*ngIf Directives</h6>
+
+  <div class="mb-3 input-wrapper">
+    <input type="text" class="form-control mb-2" name="username" [(ngModel)]="userName">
+    <p class="mb-3" *ngIf="serverCreated">Server was created. Server name is {{ userName }}</p>
+    <button class="btn btn-primary" (click)="onCreateServer()">Reset User</button>
+  </div>
+</div>
+
+<div class="p-4">
+  <!-- ngFor Directive -->
+  <h6 class="bg-color mb-4">*ngFor Directive</h6>
+  <div class="mb-3 input-wrapper">
+    <input type="text" class="form-control mb-2" name="username" [(ngModel)]="userName">
+    <p class="mb-3" *ngFor="let data of servers; index as i">Server was created. Server name is {{i}} {{ userName }}</p>
+    <button class="btn btn-primary" (click)="onCreateServer()">Reset User</button>
+  </div>
+</div>
